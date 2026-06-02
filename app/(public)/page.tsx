@@ -6,30 +6,33 @@ import { services } from "@/lib/booking";
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-950">
-      <section className="relative overflow-hidden bg-gradient-to-br from-sky-50 via-white to-slate-100 py-24">
+      <section className="relative overflow-hidden bg-linear-to-br from-sky-50 via-white to-slate-100 py-24">
         <div className="mx-auto flex max-w-7xl flex-col gap-12 px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-            <div className="max-w-2xl space-y-6">
-              <span className="inline-flex items-center rounded-full bg-sky-100 px-4 py-2 text-sm font-semibold text-sky-700 ring-1 ring-sky-200">
-                <ShieldCheck className="mr-2 h-4 w-4" />
-                Bezpieczne rezerwacje online
-              </span>
-              <h1 className="text-5xl font-semibold tracking-tight text-slate-950 sm:text-6xl">
-                Zarezerwuj wizytę u dentysty w mniej niż 30 sekund.
-              </h1>
-              <p className="max-w-2xl text-lg leading-8 text-slate-600">
-                Najbardziej intuicyjny system rezerwacji dla pacjentów i personelu. Premium design, szybki proces oraz pełna kontrola nad grafikami kliniki.
-              </p>
-              <div className="flex flex-col gap-4 sm:flex-row">
-                <Button asChild>
-                  <Link href="/booking" className="inline-flex items-center gap-2">
-                    Umów wizytę
-                    <ArrowRight className="h-4 w-4" />
+            <div className="max-w-2xl relative bg-[url(/hero.avif)] bg-cover bg-center rounded-[2rem] shadow-xl shadow-slate-200/50 overflow-hidden">
+              <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]" />
+              <div className="relative z-10 p-10 space-y-6">
+                <span className="inline-flex items-center rounded-full bg-sky-100 px-4 py-2 text-sm font-semibold text-sky-700 ring-1 ring-sky-200">
+                  <ShieldCheck className="mr-2 h-4 w-4" />
+                  Bezpieczne rezerwacje online
+                </span>
+                <h1 className="text-5xl font-semibold tracking-tight text-slate-950 sm:text-6xl">
+                  Zarezerwuj wizytę u dentysty w mniej niż 30 sekund.
+                </h1>
+                <p className="max-w-2xl text-lg leading-8 text-slate-900 font-medium">
+                  Najbardziej intuicyjny system rezerwacji dla pacjentów i personelu. Premium design, szybki proces oraz pełna kontrola nad grafikami kliniki.
+                </p>
+                <div className="flex flex-col gap-4 sm:flex-row">
+                  <Button asChild>
+                    <Link href="/booking" className="inline-flex items-center gap-2">
+                      Umów wizytę
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                  <Link href="/admin/dashboard" className="inline-flex items-center justify-center rounded-3xl border border-slate-200 bg-white px-5 py-1 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50">
+                    Panel administracyjny
                   </Link>
-                </Button>
-                <Link href="/admin/dashboard" className="inline-flex items-center justify-center rounded-3xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50">
-                  Panel administracyjny
-                </Link>
+                </div>
               </div>
             </div>
 
