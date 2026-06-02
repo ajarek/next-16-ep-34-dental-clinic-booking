@@ -67,8 +67,10 @@ export function getServiceById(id?: string) {
   return services.find((service) => service.id === id);
 }
 
+import { pl } from "date-fns/locale";
+
 export function formatDateLabel(date: Date) {
-  return format(date, "EEEE, d MMMM yyyy");
+  return format(date, "EEEE, d MMMM yyyy", { locale: pl });
 }
 
 export function formatDateShort(date: Date) {

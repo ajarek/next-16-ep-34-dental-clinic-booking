@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LayoutDashboard, CalendarDays, ClipboardList, Settings2, ShieldCheck } from "lucide-react";
+import { LayoutDashboard, CalendarDays, ClipboardList, Settings2, ShieldCheck, HomeIcon } from "lucide-react";
 import AdminAuth from "@/components/admin/AdminAuth";
 import AdminGuard from "@/components/admin/AdminGuard";
 
@@ -8,12 +8,13 @@ const navigation = [
   { href: "/admin/appointments", label: "Rezerwacje", icon: ClipboardList },
   { href: "/admin/schedule", label: "Harmonogram", icon: CalendarDays },
   { href: "/admin/settings", label: "Ustawienia", icon: Settings2 },
+  { href: "/", label: "Strona główna", icon: HomeIcon },
 ];
 
 export function AdminShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
-      <div className="mx-auto flex min-h-screen max-w-[1600px] gap-8 px-4 py-8 lg:px-8">
+      <div className="mx-auto flex min-h-screen max-w-400 gap-8 px-4 py-8 lg:px-8">
         <aside className="hidden w-80 shrink-0 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-lg lg:block">
           <div className="mb-10 flex items-center gap-3 rounded-3xl bg-sky-50 p-5 text-slate-900">
             <ShieldCheck className="h-7 w-7 text-sky-600" />
