@@ -2,6 +2,7 @@ import Link from "next/link";
 import { LayoutDashboard, CalendarDays, ClipboardList, Settings2, ShieldCheck, HomeIcon } from "lucide-react";
 import AdminAuth from "@/components/admin/AdminAuth";
 import AdminGuard from "@/components/admin/AdminGuard";
+import { ModeToggle } from "@/components/ModeToggle";
 
 const navigation = [
   { href: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -13,14 +14,14 @@ const navigation = [
 
 export function AdminShell({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
+    <div className="min-h-screen bg-background text-foreground">
       <div className="mx-auto flex min-h-screen max-w-400 gap-8 px-4 py-8 lg:px-8">
-        <aside className="hidden w-80 shrink-0 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-lg lg:block">
-          <div className="mb-10 flex items-center gap-3 rounded-3xl bg-sky-50 p-5 text-slate-900">
-            <ShieldCheck className="h-7 w-7 text-sky-600" />
+        <aside className="hidden w-80 shrink-0 rounded-[2rem] border border-border bg-card p-6 shadow-lg lg:block">
+          <div className="mb-10 flex items-center gap-3 rounded-3xl bg-muted p-5 text-foreground">
+            <ShieldCheck className="h-7 w-7 text-primary" />
             <div>
-              <p className="text-sm uppercase tracking-[0.28em] text-sky-700">Panel admina</p>
-              <p className="mt-1 text-sm text-slate-600">Zarządzaj grafikami i rezerwacjami</p>
+              <p className="text-sm uppercase tracking-[0.28em] text-primary">Panel admina</p>
+              <p className="mt-1 text-sm ">Zarządzaj grafikami i rezerwacjami</p>
             </div>
           </div>
           <nav className="space-y-2">
@@ -30,7 +31,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="flex items-center gap-3 rounded-3xl px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-sky-50 hover:text-sky-900"
+                  className="flex items-center gap-3 rounded-3xl px-4 py-3 text-sm font-medium  transition hover:bg-muted hover:text-primary"
                 >
                   <Icon className="h-5 w-5" />
                   {item.label}
@@ -40,14 +41,15 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
           </nav>
         </aside>
 
-        <main className="flex-1 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-lg">
+        <main className="flex-1 rounded-[2rem] border border-border bg-card p-6 shadow-lg">
           <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p className="text-xs uppercase tracking-[0.32em] text-slate-500">System zarządzania</p>
-              <h1 className="mt-2 text-3xl font-semibold text-slate-950">Klinika dentystyczna</h1>
+              <p className="text-xs uppercase tracking-[0.32em] ">System zarządzania</p>
+              <h1 className="mt-2 text-3xl font-semibold text-foreground">Klinika dentystyczna</h1>
             </div>
             <div className="flex items-center gap-4">
-              <div className="rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">Supabase Auth + RLS</div>
+              <ModeToggle />
+              <div className="rounded-3xl border border-border bg-muted px-4 py-3 text-sm ">Supabase Auth + RLS</div>
               <AdminAuth />
             </div>
           </div>

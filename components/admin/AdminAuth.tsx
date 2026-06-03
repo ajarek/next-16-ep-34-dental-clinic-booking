@@ -53,8 +53,8 @@ export default function AdminAuth() {
   if (user) {
     return (
       <div className="flex items-center gap-3">
-        <div className="rounded-full bg-slate-100 px-3 py-2 text-sm font-medium text-slate-800">{user.email}</div>
-        <button onClick={handleSignOut} className="rounded-2xl bg-white border border-slate-200 px-3 py-2 text-sm font-medium hover:bg-slate-50">
+        <div className="rounded-full bg-muted px-3 py-2 text-sm font-medium text-foreground">{user.email}</div>
+        <button onClick={handleSignOut} className="rounded-2xl bg-card border border-border px-3 py-2 text-sm font-medium hover:bg-muted text-foreground">
           Wyloguj
         </button>
       </div>
@@ -70,7 +70,7 @@ export default function AdminAuth() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="h-9 rounded-2xl border border-slate-200 bg-white px-3 py-2 text-sm outline-none w-full sm:w-auto"
+          className="h-9 rounded-2xl border border-border bg-card px-3 py-2 text-sm outline-none w-full sm:w-auto text-foreground"
         />
         <input
           type="password"
@@ -78,13 +78,13 @@ export default function AdminAuth() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="h-9 rounded-2xl border border-slate-200 bg-white px-3 py-2 text-sm outline-none w-full sm:w-auto"
+          className="h-9 rounded-2xl border border-border bg-card px-3 py-2 text-sm outline-none w-full sm:w-auto text-foreground"
         />
-        <button type="submit" disabled={loading} className="w-full sm:w-auto rounded-2xl bg-sky-600 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-700">
+        <button type="submit" disabled={loading} className="w-full sm:w-auto rounded-2xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
           {loading ? "..." : "Zaloguj"}
         </button>
       </form>
-      {message && <p className="text-[10px] text-red-500 mr-2">{message}</p>}
+      {message && <p className="text-[10px] text-destructive mr-2">{message}</p>}
     </div>
   );
 }

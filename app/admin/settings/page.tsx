@@ -38,49 +38,49 @@ export default function AdminSettingsPage() {
 
   return (
     <div className="space-y-8">
-      <div className="rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-sm">
+      <div className="rounded-[1.75rem] border border-border bg-card p-8 shadow-sm">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Ustawienia kliniki</p>
-            <h2 className="mt-2 text-2xl font-semibold text-slate-950">Dane i usługi</h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] ">Ustawienia kliniki</p>
+            <h2 className="mt-2 text-2xl font-semibold text-foreground">Dane i usługi</h2>
           </div>
-          <div className="rounded-3xl bg-slate-50 px-4 py-3 text-sm text-slate-600">
+          <div className="rounded-3xl bg-muted px-4 py-3 text-sm ">
             {loading ? "Ładowanie usług..." : `${services.length} usług załadowano`}
           </div>
         </div>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
-        <div className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="flex items-center gap-3 text-slate-900">
-            <Building2 className="h-5 w-5 text-sky-600" />
+        <div className="rounded-[1.75rem] border border-border bg-card p-6 shadow-sm">
+          <div className="flex items-center gap-3 text-foreground">
+            <Building2 className="h-5 w-5 text-primary" />
             <p className="font-semibold">Dane kliniki</p>
           </div>
-          <div className="mt-6 space-y-4 text-sm text-slate-700">
-            <div className="rounded-3xl border border-slate-100 bg-slate-50 px-4 py-4">
-              <p className="font-semibold text-slate-950">Klinika BlueDent</p>
+          <div className="mt-6 space-y-4 text-sm ">
+            <div className="rounded-3xl border border-border bg-muted px-4 py-4">
+              <p className="font-semibold text-foreground">Klinika BlueDent</p>
               <p>Warszawa, ul. Zębowa 12</p>
             </div>
-            <div className="rounded-3xl border border-slate-100 bg-slate-50 px-4 py-4">
-              <p className="font-semibold text-slate-950">Gabinetów</p>
+            <div className="rounded-3xl border border-border bg-muted px-4 py-4">
+              <p className="font-semibold text-foreground">Gabinetów</p>
               <p>3</p>
             </div>
           </div>
         </div>
-        <div className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="flex items-center gap-3 text-slate-900">
-            <ListChecks className="h-5 w-5 text-sky-600" />
+        <div className="rounded-[1.75rem] border border-border bg-card p-6 shadow-sm">
+          <div className="flex items-center gap-3 text-foreground">
+            <ListChecks className="h-5 w-5 text-primary" />
             <p className="font-semibold">Usługi</p>
           </div>
-          <div className="mt-6 space-y-4 text-sm text-slate-700">
+          <div className="mt-6 space-y-4 text-sm ">
             {services.length === 0 ? (
-              <div className="rounded-3xl border border-slate-100 bg-slate-50 px-4 py-4">Brak usług w bazie danych.</div>
+              <div className="rounded-3xl border border-border bg-muted px-4 py-4">Brak usług w bazie danych.</div>
             ) : (
               services.map((service) => (
-                <div key={service.id} className="rounded-3xl border border-slate-100 bg-slate-50 px-4 py-4">
-                  <p className="font-semibold text-slate-950">{service.name}</p>
+                <div key={service.id} className="rounded-3xl border border-border bg-muted px-4 py-4">
+                  <p className="font-semibold text-foreground">{service.name}</p>
                   <p>{service.duration_minutes} min — {service.price} zł</p>
-                  {service.description ? <p className="mt-1 text-slate-600">{service.description}</p> : null}
+                  {service.description ? <p className="mt-1 ">{service.description}</p> : null}
                 </div>
               ))
             )}

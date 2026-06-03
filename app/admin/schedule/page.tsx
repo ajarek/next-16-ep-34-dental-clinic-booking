@@ -52,32 +52,32 @@ export default function AdminSchedulePage() {
 
   return (
     <div className="space-y-8">
-      <div className="rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-sm">
+      <div className="rounded-[1.75rem] border border-border bg-card p-8 shadow-sm">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Harmonogram pracy</p>
-            <h2 className="mt-2 text-2xl font-semibold text-slate-950">Godziny otwarcia i blokady</h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] ">Harmonogram pracy</p>
+            <h2 className="mt-2 text-2xl font-semibold text-foreground">Godziny otwarcia i blokady</h2>
           </div>
-          <div className="rounded-3xl bg-slate-50 px-4 py-3 text-sm text-slate-600">
+          <div className="rounded-3xl bg-muted px-4 py-3 text-sm ">
             {loading ? "Ładowanie danych..." : "Dane pobrane z Supabase"}
           </div>
         </div>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
-        <div className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="flex items-center gap-3 text-slate-900">
-            <CalendarDays className="h-5 w-5 text-sky-600" />
+        <div className="rounded-[1.75rem] border border-border bg-card p-6 shadow-sm">
+          <div className="flex items-center gap-3 text-foreground">
+            <CalendarDays className="h-5 w-5 text-primary" />
             <p className="font-semibold">Godziny pracy</p>
           </div>
-          <div className="mt-6 space-y-3 text-sm text-slate-700">
+          <div className="mt-6 space-y-3 text-sm ">
             {businessHours.length === 0 ? (
-              <div className="rounded-3xl border border-slate-100 bg-slate-50 px-4 py-3">Brak ustawionych godzin pracy.</div>
+              <div className="rounded-3xl border border-border bg-muted px-4 py-3">Brak ustawionych godzin pracy.</div>
             ) : (
               businessHours.map((item) => (
-                <div key={item.id} className="flex flex-col gap-2 rounded-3xl border border-slate-100 bg-slate-50 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+                <div key={item.id} className="flex flex-col gap-2 rounded-3xl border border-border bg-muted px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
                   <span>{dayLabels[item.day_of_week] ?? `Dzień ${item.day_of_week}`}</span>
-                  <span className="font-semibold text-slate-950">
+                  <span className="font-semibold text-foreground">
                     {item.open_time} – {item.close_time}
                     {item.break_start && item.break_end ? ` (przerwa ${item.break_start} – ${item.break_end})` : ""}
                   </span>
@@ -87,18 +87,18 @@ export default function AdminSchedulePage() {
           </div>
         </div>
 
-        <div className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="flex items-center gap-3 text-slate-900">
-            <Pause className="h-5 w-5 text-slate-500" />
+        <div className="rounded-[1.75rem] border border-border bg-card p-6 shadow-sm">
+          <div className="flex items-center gap-3 text-foreground">
+            <Pause className="h-5 w-5 " />
             <p className="font-semibold">Blokowane dni</p>
           </div>
-          <div className="mt-6 space-y-3 text-sm text-slate-700">
+          <div className="mt-6 space-y-3 text-sm ">
             {blockedDates.length === 0 ? (
-              <div className="rounded-3xl border border-slate-100 bg-slate-50 px-4 py-3">Brak zdefiniowanych blokad.</div>
+              <div className="rounded-3xl border border-border bg-muted px-4 py-3">Brak zdefiniowanych blokad.</div>
             ) : (
               blockedDates.map((block) => (
-                <div key={block.id} className="rounded-3xl border border-slate-100 bg-slate-50 px-4 py-3">
-                  <p className="font-semibold text-slate-950">{block.blocked_date}</p>
+                <div key={block.id} className="rounded-3xl border border-border bg-muted px-4 py-3">
+                  <p className="font-semibold text-foreground">{block.blocked_date}</p>
                   <p>{block.reason}</p>
                 </div>
               ))
