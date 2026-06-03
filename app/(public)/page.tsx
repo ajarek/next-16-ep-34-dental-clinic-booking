@@ -24,7 +24,7 @@ export default function Home() {
                 </p>
                 <div className="flex flex-col gap-4 sm:flex-row">
                   <Button asChild>
-                    <Link href="/booking" className="inline-flex items-center gap-2">
+                    <Link href="/booking" className="inline-flex items-center gap-2 font-semibold text-primary">
                       Umów wizytę
                       <ArrowRight className="h-4 w-4" />
                     </Link>
