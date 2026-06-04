@@ -2,7 +2,8 @@ import Link from "next/link";
 import { ArrowRight, CalendarDays, ShieldCheck, Smile } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { services } from "@/lib/booking";
-
+import BorderBeamCornerCutCard from "@/components/ui/border-beam-corner-cut-card/index";
+import { Terminal, Zap } from "lucide-react";
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -69,14 +70,19 @@ export default function Home() {
 
           <section className="grid gap-6 lg:grid-cols-3">
             {services.map((service) => (
-              <div key={service.id} className="rounded-[2rem] border border-border bg-card p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+              <BorderBeamCornerCutCard
+        beamColor="pink"
+        title="CLI Installation"
+        description="Install components directly into your project via CLI."
+        icon={<Terminal className="w-full h-full" />}
+       key={service.id} className="rounded-[2rem] border border-border bg-card p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
                 <div className={`inline-flex rounded-3xl px-4 py-2 text-sm font-semibold ${service.accent}`}>
                   {service.durationMinutes} min
                 </div>
                 <h2 className="mt-6 text-xl font-semibold text-foreground">{service.name}</h2>
                 <p className="mt-4 text-sm leading-6 ">{service.description}</p>
                 <p className="mt-6 text-3xl font-semibold text-foreground">{service.price} zł</p>
-              </div>
+              </BorderBeamCornerCutCard>
             ))}
           </section>
 
