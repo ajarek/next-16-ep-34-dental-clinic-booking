@@ -70,7 +70,7 @@ export default function AdminAuth() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="h-9 rounded-2xl border border-border bg-card px-3 py-2 text-sm outline-none w-full sm:w-auto text-foreground"
+          className="h-9 rounded-2xl border border-border bg-input px-3 py-2 text-sm outline-none w-full sm:w-auto text-foreground"
         />
         <input
           type="password"
@@ -78,7 +78,7 @@ export default function AdminAuth() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="h-9 rounded-2xl border border-border bg-card px-3 py-2 text-sm outline-none w-full sm:w-auto text-foreground"
+          className="h-9 rounded-2xl border border-border bg-input px-3 py-2 text-sm outline-none w-full sm:w-auto text-foreground"
         />
         <button type="submit" disabled={loading} className="w-full sm:w-auto rounded-2xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
           {loading ? "..." : "Zaloguj"}

@@ -49,7 +49,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
             </div>
             <div className="flex items-center gap-4">
               <ModeToggle />
-              <div className="rounded-3xl border border-border bg-muted px-4 py-3 text-sm ">Supabase Auth + RLS</div>
+              <div className="rounded-3xl border border-border bg-muted px-4 py-2 text-sm ">Supabase Auth + RLS</div>
               <AdminAuth />
             </div>
           </div>
