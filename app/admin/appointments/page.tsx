@@ -38,6 +38,12 @@ export default function AdminAppointmentsPageClient() {
     
     if (error) {
       alert("Błąd aktualizacji statusu: " + error.message);
+    } else {
+      setAppointments((prev) =>
+        prev.map((item) =>
+          item.id === id ? { ...item, status } : item
+        )
+      );
     }
   }
 
